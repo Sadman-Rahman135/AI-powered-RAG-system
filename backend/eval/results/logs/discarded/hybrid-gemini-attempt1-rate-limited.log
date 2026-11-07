@@ -1,0 +1,28 @@
+2026-11-05 17:57:14,254 INFO eval.run_eval: config hybrid-gemini: 164 files (+0 scale), warm-up 3.7 s
+2026-11-05 17:57:18,307 INFO eval.run_eval: [1/164] pdf/t1_digital_01.pdf -> needs_review (4.01 s)
+2026-11-05 17:57:20,967 INFO eval.run_eval: [2/164] pdf/t2_digital_01.pdf -> needs_review (2.65 s)
+2026-11-05 17:57:24,679 INFO eval.run_eval: [3/164] pdf/t3_digital_01.pdf -> completed (3.70 s)
+2026-11-05 17:57:29,929 INFO eval.run_eval: [4/164] pdf/t4_digital_01.pdf -> needs_review (5.24 s)
+2026-11-05 17:57:31,516 INFO eval.run_eval: [5/164] pdf/t5_digital_01.pdf -> needs_review (1.58 s)
+2026-11-05 17:57:36,930 INFO eval.run_eval: [6/164] pdf/t6_digital_01.pdf -> needs_review (5.40 s)
+2026-11-05 17:57:36,965 WARNING app.pipeline.processor: job de6af5a9-ee23-4b36-b888-4d615d34dbb1 document c5db1df7-e1c6-4463-aca9-fd3cebdc8ce5: failed (corrupt_file)
+2026-11-05 17:57:36,965 INFO eval.run_eval: [7/164] corrupt/truncated.pdf -> failed (0.03 s)
+2026-11-05 17:57:36,967 INFO eval.run_eval: [8/164] corrupt/random_bytes.pdf -> rejected (-)
+2026-11-05 17:57:36,967 INFO eval.run_eval: [9/164] corrupt/empty.pdf -> rejected (-)
+2026-11-05 17:57:36,996 WARNING app.pipeline.processor: job 208da780-dc0d-4a84-b92d-96d26c183103 document c8729602-b24c-412f-8608-1dbaa60ea8bb: failed (encrypted_file)
+2026-11-05 17:57:36,998 INFO eval.run_eval: [10/164] corrupt/encrypted.pdf -> failed (0.02 s)
+2026-11-05 17:57:37,023 WARNING app.pipeline.processor: job 9f07b318-031a-4da2-b85d-081f3425407a document af4f2487-4f65-4569-9597-27f21b3e02f0: failed (corrupt_file)
+2026-11-05 17:57:37,024 INFO eval.run_eval: [11/164] corrupt/truncated.xlsx -> failed (0.02 s)
+2026-11-05 17:57:37,044 WARNING app.pipeline.processor: job 458eb3dd-0123-403f-8528-9e15ad991ef7 document 06bff314-5139-46bc-b3e7-2ca2eff6e652: failed (corrupt_file)
+2026-11-05 17:57:37,044 INFO eval.run_eval: [12/164] corrupt/truncated.png -> failed (0.01 s)
+2026-11-05 17:57:37,045 INFO eval.run_eval: [13/164] corrupt/fake_invoice.pdf -> rejected (-)
+2026-11-05 17:57:37,046 INFO eval.run_eval: [14/164] corrupt/session_expired.xlsx -> rejected (-)
+2026-11-05 17:57:48,401 WARNING app.extraction.service: llm failed on pages 1-1 (gemini API error: HTTP 429 (RESOURCE_EXHAUSTED), transient=True); using the rules result
+2026-11-05 17:57:48,577 INFO eval.run_eval: [15/164] corrupt/scan_saved_as.pdf -> completed (11.52 s)
+2026-11-05 17:57:57,522 WARNING app.extraction.service: llm failed on pages 1-1 (gemini API error: HTTP 429 (RESOURCE_EXHAUSTED), transient=True); using the rules result
+2026-11-05 17:57:57,747 INFO eval.run_eval: [16/164] corrupt/owner_locked.pdf -> completed (9.16 s)
+2026-11-05 17:58:08,107 WARNING app.extraction.service: llm failed on pages 1-1 (gemini API error: HTTP 429 (RESOURCE_EXHAUSTED), transient=True); using the rules result
+2026-11-05 17:58:08,300 INFO eval.run_eval: [17/164] pdf/t1_scan_light_01.pdf -> needs_review (10.55 s)
+2026-11-05 17:58:16,622 INFO eval.run_eval: [18/164] images/t2_clean_01.png -> completed (8.31 s)
+2026-11-05 17:58:30,572 INFO eval.run_eval: [19/164] images/t3_photo_01.jpg -> completed (13.94 s)
+2026-11-05 17:58:48,430 WARNING app.extraction.service: llm failed on pages 1-2 (gemini API error: HTTP 429 (RESOURCE_EXHAUSTED), transient=True); using the rules result

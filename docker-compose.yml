@@ -1,0 +1,152 @@
+# DocIntel — full stack.
+#   cp .env.example .env            # then edit secrets
+#   docker compose up -d --build    # db, redis, migrate, api, worker, web
+#   docker compose --profile llm up -d llm                                          # local LLM on CPU
+#   docker compose -f docker-compose.yml -f docker-compose.gpu.yml --profile llm up -d llm   # NVIDIA GPU
+# Scale OCR/extraction horizontally:  docker compose up -d --scale worker=3
+name: docintel
+
+x-backend: &backend
+  build:
+    context: ./backend
+  image: docintel-backend:latest
+  restart: unless-stopped
+  # Every setting in .env reaches the backend (MAX_UPLOAD_MB, RATE_LIMIT_*, JOB_*, ...); the container-specific
+  # values under `environment` (database/redis/LLM URLs, queue, storage) take precedence over the file.
+  env_file:
+    - path: .env
+      required: false
+  environment: &backend-env
+    APP_ENV: ${APP_ENV:-development}
+    DATABASE_URL: postgresql+psycopg://docintel:${POSTGRES_PASSWORD:-docintel-dev-only}@db:5432/docintel
+    REDIS_URL: redis://redis:6379/0
+    QUEUE_BACKEND: celery
+    STORAGE_DIR: /data/storage
+    EMBEDDING_PROVIDER: ${EMBEDDING_PROVIDER:-fastembed}
+    EXTRACTION_MODE: ${EXTRACTION_MODE:-hybrid}
+    LLM_PROVIDER: ${LLM_PROVIDER:-auto}
+    ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+    ANTHROPIC_MODEL: ${ANTHROPIC_MODEL:-claude-opus-5-5}
+    GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+    GEMINI_MODEL: ${GEMINI_MODEL:-gemini-3-flash-preview}
+    LLM_BASE_URL: ${LLM_BASE_URL_IN_DOCKER:-}
+    LLM_MODEL: ${LLM_MODEL:-qwen3.5-9b}
+    LLM_MAX_INPUT_CHARS: ${LLM_MAX_INPUT_CHARS:-60000}
+    API_KEYS: ${API_KEYS:-}
+    CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:3000}
+    OCR_ENGINE: ${OCR_ENGINE:-rapidocr}
+    LOG_JSON: "true"
+  volumes:
+    - storage:/data/storage
+  depends_on:
+    db:
+      condition: service_healthy
+    redis:
+      condition: service_healthy
+
+services:
+  db:
+    image: pgvector/pgvector:pg17
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: docintel
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-docintel-dev-only}
+      POSTGRES_DB: docintel
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "127.0.0.1:5433:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U docintel -d docintel"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes", "--save", "60", "1000"]
+    volumes:
+      - redisdata:/data
+    ports:
+      - "127.0.0.1:6380:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  migrate:
+    <<: *backend
+    restart: "no"
+    command: ["alembic", "upgrade", "head"]
+    healthcheck:
+      disable: true
+
+  api:
+    <<: *backend
+    ports:
+      - "127.0.0.1:8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+
+  worker:
+    <<: *backend
+    command: ["celery", "-A", "app.queue.celery_app", "worker", "--pool=threads", "--concurrency=2", "-Q", "documents",
+              "--loglevel=INFO", "--without-gossip", "--without-mingle"]
+    environment:
+      <<: *backend-env
+      OCR_WORKERS: ${OCR_WORKERS:-4}
+    healthcheck:
+      test: ["CMD-SHELL", "celery -A app.queue.celery_app inspect ping --timeout 5 | grep -q pong"]
+      interval: 30s
+      timeout: 15s
+      retries: 5
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+
+  web:
+    build:
+      context: ./frontend
+    image: docintel-web:latest
+    restart: unless-stopped
+    environment:
+      BACKEND_URL: http://api:8000
+      BACKEND_API_KEY: ${BACKEND_API_KEY:-}
+      UI_BASIC_AUTH: ${UI_BASIC_AUTH:-}
+    ports:
+      - "127.0.0.1:3000:3000"
+    depends_on:
+      api:
+        condition: service_healthy
+
+  # Local LLM (llama.cpp OpenAI-compatible server). Models live in ./models (git-ignored; see README).
+  # A bigger model needs only .env: LLM_GGUF / LLM_MODEL, LLM_CTX (total context) and LLM_PARALLEL (slots; each
+  # request gets LLM_CTX / LLM_PARALLEL tokens). The backend reads the per-slot context from /props and sizes its
+  # input budget to it. Keep the same command in docker-compose.gpu.yml.
+  llm:
+    image: ghcr.io/ggml-org/llama.cpp:server-b11580
+    profiles: [llm]
+    restart: unless-stopped
+    command: ["-m", "/models/${LLM_GGUF:-Qwen3.5-9B-Q4_K_M.gguf}", "--alias", "${LLM_MODEL:-qwen3.5-9b}",
+              "--host", "0.0.0.0", "--port", "8080", "-c", "${LLM_CTX:-16384}", "--jinja",
+              "--parallel", "${LLM_PARALLEL:-2}"]
+    volumes:
+      - ./models:/models:ro
+    ports:
+      - "127.0.0.1:8080:8080"
+
+volumes:
+  pgdata:
+  redisdata:
+  storage:

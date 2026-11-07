@@ -1,0 +1,18 @@
+# NVIDIA GPU override for the local LLM: CUDA build of the same llama.cpp release.
+#   docker compose -f docker-compose.yml -f docker-compose.gpu.yml --profile llm up -d llm
+# LLM_NGL is the number of layers offloaded to the GPU. The default "auto" lets llama.cpp fit as many layers as
+# free VRAM allows (a 6 GB laptop GPU runs Qwen3-4B fully and Qwen3.5-9B partly); 99 (or "all") forces every layer
+# onto the GPU and fails to load when the model does not fit. Context and slots as in docker-compose.yml.
+services:
+  llm:
+    image: ghcr.io/ggml-org/llama.cpp:server-cuda-b11580
+    command: ["-m", "/models/${LLM_GGUF:-Qwen3.5-9B-Q4_K_M.gguf}", "--alias", "${LLM_MODEL:-qwen3.5-9b}",
+              "--host", "0.0.0.0", "--port", "8080", "-c", "${LLM_CTX:-16384}", "--jinja",
+              "--parallel", "${LLM_PARALLEL:-2}", "-ngl", "${LLM_NGL:-auto}"]
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]

@@ -1,0 +1,149 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * DocIntel theme: ledger paper and ink.
+ * A cool off-white page, white working surfaces, deep ink text and one ink-blue accent for actions.
+ * Status tones (neutral / info / success / warning / danger) are tinted surfaces with dark text; every pair
+ * below meets WCAG AA (>= 4.5:1) and input borders meet the 3:1 non-text contrast minimum.
+ */
+:root {
+  --background: #f4f6f8;
+  --foreground: #17202c;
+  --card: #ffffff;
+  --card-foreground: #17202c;
+  --popover: #ffffff;
+  --popover-foreground: #17202c;
+  --primary: #1e4f8f;
+  --primary-foreground: #ffffff;
+  --secondary: #e9eef4;
+  --secondary-foreground: #17202c;
+  --muted: #eef1f5;
+  --muted-foreground: #525d6c;
+  --accent: #e6edf6;
+  --accent-foreground: #17202c;
+  --destructive: #b3261e;
+  --border: #d6dde6;
+  --input: #8a95a5;
+  --ring: #1e4f8f;
+  --radius: 0.375rem;
+
+  --tone-neutral: #eef1f5;
+  --tone-neutral-foreground: #3f4a59;
+  --tone-neutral-border: #cbd3dd;
+  --tone-info: #e6eefb;
+  --tone-info-foreground: #1c4fb0;
+  --tone-info-border: #b8ccf0;
+  --tone-success: #e4f3ea;
+  --tone-success-foreground: #17663a;
+  --tone-success-border: #b4dcc3;
+  --tone-warning: #fdf1dc;
+  --tone-warning-foreground: #8a4a05;
+  --tone-warning-border: #f0cf96;
+  --tone-danger: #fce8e6;
+  --tone-danger-foreground: #b3261e;
+  --tone-danger-border: #f2b8b2;
+
+  --highlight: #ffe7a3;
+  --dirty: #1e4f8f;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, "SFMono-Regular", Consolas, monospace;
+  --font-heading: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif;
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+
+  --color-tone-neutral: var(--tone-neutral);
+  --color-tone-neutral-foreground: var(--tone-neutral-foreground);
+  --color-tone-neutral-border: var(--tone-neutral-border);
+  --color-tone-info: var(--tone-info);
+  --color-tone-info-foreground: var(--tone-info-foreground);
+  --color-tone-info-border: var(--tone-info-border);
+  --color-tone-success: var(--tone-success);
+  --color-tone-success-foreground: var(--tone-success-foreground);
+  --color-tone-success-border: var(--tone-success-border);
+  --color-tone-warning: var(--tone-warning);
+  --color-tone-warning-foreground: var(--tone-warning-foreground);
+  --color-tone-warning-border: var(--tone-warning-border);
+  --color-tone-danger: var(--tone-danger);
+  --color-tone-danger-foreground: var(--tone-danger-foreground);
+  --color-tone-danger-border: var(--tone-danger-border);
+  --color-highlight: var(--highlight);
+  --color-dirty: var(--dirty);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-size: 0.875rem;
+    line-height: 1.45;
+  }
+  /* Generous, consistent keyboard focus for anything the component styles do not cover (links, summaries). */
+  a:focus-visible,
+  summary:focus-visible,
+  [tabindex]:not([tabindex="-1"]):focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+  mark {
+    @apply rounded-sm bg-highlight px-0.5 text-foreground;
+  }
+}
+
+@layer utilities {
+  /* Amounts, invoice numbers and identifiers: monospace, tabular figures, no ligatures. */
+  .figures {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums slashed-zero;
+    font-feature-settings: "tnum", "zero";
+    font-variant-ligatures: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

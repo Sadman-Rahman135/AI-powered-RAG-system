@@ -1,0 +1,16 @@
+* text=auto eol=lf
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.tif binary
+*.tiff binary
+*.xlsx binary
+*.xls binary
+*.gguf binary
+*.webm binary
+*.mp4 binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.ps1 text eol=crlf

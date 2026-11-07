@@ -1,0 +1,166 @@
+2026-11-05 13:43:08,994 INFO eval.run_eval: config hybrid-local-4b: 164 files (+0 scale), warm-up 2.8 s
+2026-11-05 13:43:22,943 INFO eval.run_eval: [1/164] pdf/t1_digital_01.pdf -> needs_review (13.92 s)
+2026-11-05 13:43:33,714 INFO eval.run_eval: [2/164] pdf/t2_digital_01.pdf -> needs_review (10.76 s)
+2026-11-05 13:44:06,764 INFO eval.run_eval: [3/164] pdf/t3_digital_01.pdf -> completed (33.04 s)
+2026-11-05 13:44:39,038 INFO eval.run_eval: [4/164] pdf/t4_digital_01.pdf -> needs_review (32.27 s)
+2026-11-05 13:44:49,356 INFO eval.run_eval: [5/164] pdf/t5_digital_01.pdf -> needs_review (10.31 s)
+2026-11-05 13:45:12,906 INFO eval.run_eval: [6/164] pdf/t6_digital_01.pdf -> needs_review (23.54 s)
+2026-11-05 13:45:12,937 WARNING app.pipeline.processor: job 6d4a7e4f-b1ac-43c8-95fa-fa59fa304aae document dd9e2cee-fc24-49b7-a828-eafb5db72665: failed (corrupt_file)
+2026-11-05 13:45:12,938 INFO eval.run_eval: [7/164] corrupt/truncated.pdf -> failed (0.03 s)
+2026-11-05 13:45:12,939 INFO eval.run_eval: [8/164] corrupt/random_bytes.pdf -> rejected (-)
+2026-11-05 13:45:12,939 INFO eval.run_eval: [9/164] corrupt/empty.pdf -> rejected (-)
+2026-11-05 13:45:12,964 WARNING app.pipeline.processor: job d0f23e99-989f-4a88-b588-9b8ad6a4f9fc document 795d891c-ed9f-4779-a555-54c3e8f75648: failed (encrypted_file)
+2026-11-05 13:45:12,964 INFO eval.run_eval: [10/164] corrupt/encrypted.pdf -> failed (0.02 s)
+2026-11-05 13:45:12,978 WARNING app.pipeline.processor: job 1a902a08-2869-4d11-8db3-1090571f3f68 document 4c281120-4ad9-4d41-914f-1f2d400ed313: failed (corrupt_file)
+2026-11-05 13:45:12,978 INFO eval.run_eval: [11/164] corrupt/truncated.xlsx -> failed (0.01 s)
+2026-11-05 13:45:13,002 WARNING app.pipeline.processor: job 201f9b91-733c-4653-bc17-e8b7a1463c90 document f6c52eb8-9f82-4e96-afbb-b7e8f52e8637: failed (corrupt_file)
+2026-11-05 13:45:13,002 INFO eval.run_eval: [12/164] corrupt/truncated.png -> failed (0.02 s)
+2026-11-05 13:45:13,004 INFO eval.run_eval: [13/164] corrupt/fake_invoice.pdf -> rejected (-)
+2026-11-05 13:45:13,004 INFO eval.run_eval: [14/164] corrupt/session_expired.xlsx -> rejected (-)
+2026-11-05 13:45:23,696 INFO eval.run_eval: [15/164] corrupt/scan_saved_as.pdf -> needs_review (10.69 s)
+2026-11-05 13:45:35,903 INFO eval.run_eval: [16/164] corrupt/owner_locked.pdf -> needs_review (12.20 s)
+2026-11-05 13:45:50,573 INFO eval.run_eval: [17/164] pdf/t1_scan_light_01.pdf -> needs_review (14.66 s)
+2026-11-05 13:46:03,774 INFO eval.run_eval: [18/164] images/t2_clean_01.png -> needs_review (13.19 s)
+2026-11-05 13:46:14,544 INFO eval.run_eval: [19/164] images/t3_photo_01.jpg -> completed (10.76 s)
+2026-11-05 13:47:14,668 INFO eval.run_eval: [20/164] images/t4_scan_01.tiff -> needs_review (60.11 s)
+2026-11-05 13:47:15,027 INFO eval.run_eval: [21/164] sheets/t5_invoice_typed.xlsx -> needs_review (0.35 s)
+2026-11-05 13:47:15,610 INFO eval.run_eval: [22/164] sheets/t6_invoice.xls -> needs_review (0.58 s)
+2026-11-05 13:47:16,072 INFO eval.run_eval: [23/164] sheets/t1_invoice.csv -> needs_review (0.45 s)
+2026-11-05 13:47:32,203 INFO eval.run_eval: [24/164] groups/dup_1_a_digital.pdf -> completed (16.12 s)
+2026-11-05 13:47:43,174 INFO eval.run_eval: [25/164] groups/dup_1_b_t1_scan_light.jpg -> needs_review (10.96 s)
+2026-11-05 13:47:46,248 INFO eval.run_eval: [26/164] ledgers/ledger_de_semicolon_cp1252.csv -> completed (3.07 s)
+2026-11-05 13:47:49,425 INFO eval.run_eval: [27/164] ledgers/ledger_eu_text.xlsx -> completed (3.17 s)
+2026-11-05 13:47:59,634 INFO eval.run_eval: [28/164] pdf/t1_digital_02.pdf -> needs_review (10.20 s)
+2026-11-05 13:48:11,436 INFO eval.run_eval: [29/164] pdf/t1_scan_light_02.pdf -> needs_review (11.79 s)
+2026-11-05 13:48:22,407 INFO eval.run_eval: [30/164] images/t1_clean_01.png -> needs_review (10.96 s)
+2026-11-05 13:48:43,359 INFO eval.run_eval: [31/164] images/t1_scan_light_01.jpg -> needs_review (20.94 s)
+2026-11-05 13:49:36,757 INFO eval.run_eval: [32/164] images/t1_scan_01.tiff -> needs_review (53.39 s)
+2026-11-05 13:49:37,341 INFO eval.run_eval: [33/164] sheets/t1_invoice_typed.xlsx -> completed (0.57 s)
+2026-11-05 13:49:37,954 INFO eval.run_eval: [34/164] sheets/t1_invoice.xls -> completed (0.59 s)
+2026-11-05 13:49:38,694 INFO eval.run_eval: [35/164] sheets/t2_invoice.csv -> needs_review (0.73 s)
+2026-11-05 13:49:41,553 WARNING app.extraction.service: llm failed on pages 2-2 (local LLM request failed: RemoteProtocolError, transient=True); using the rules result
+2026-11-05 13:49:41,554 WARNING app.extraction.service: llm failed on pages 1-1 (local LLM request failed: RemoteProtocolError, transient=True); using the rules result
+2026-11-05 13:49:41,559 WARNING app.extraction.service: llm failed on pages 4-4 (local LLM request failed: RemoteProtocolError, transient=True); using the rules result
+2026-11-05 13:49:41,560 WARNING app.extraction.service: llm failed on pages 3-3 (local LLM request failed: RemoteProtocolError, transient=True); using the rules result
+2026-11-05 13:49:41,565 WARNING app.extraction.service: llm failed on pages 6-6 (local LLM request failed: RemoteProtocolError, transient=True); using the rules result
+2026-11-05 13:49:41,570 WARNING app.extraction.service: llm failed on pages 7-9 (local LLM request failed: RemoteProtocolError, transient=True); using the rules result
+2026-11-05 13:49:41,573 WARNING app.extraction.service: llm failed on pages 10-10 (local LLM request failed: RemoteProtocolError, transient=True); using the rules result
+2026-11-05 13:49:41,577 WARNING app.extraction.service: llm failed on pages 11-11 (local LLM request failed: RemoteProtocolError, transient=True); using the rules result
+2026-11-05 13:49:41,579 WARNING app.extraction.service: llm failed on pages 5-5 (local LLM request failed: RemoteProtocolError, transient=True); using the rules result
+2026-11-05 13:49:42,299 WARNING app.extraction.service: llm failed on pages 12-14 (local LLM request failed: RemoteProtocolError, transient=True); using the rules result
+2026-11-05 13:49:42,305 WARNING app.extraction.service: llm failed on pages 18-18 (local LLM request failed: RemoteProtocolError, transient=True); using the rules result
+2026-11-05 13:49:42,305 WARNING app.extraction.service: llm failed on pages 15-17 (local LLM request failed: RemoteProtocolError, transient=True); using the rules result
+2026-11-05 13:49:51,022 INFO eval.run_eval: [36/164] multi/batch_01_t1.pdf -> needs_review (12.32 s)
+2026-11-05 13:49:53,614 WARNING app.extraction.service: llm failed on pages 1-1 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:49:53,940 INFO eval.run_eval: [37/164] groups/dup_2_a_digital.pdf -> needs_review (2.91 s)
+2026-11-05 13:49:59,403 WARNING app.extraction.service: llm failed on pages 1-1 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:49:59,791 INFO eval.run_eval: [38/164] groups/dup_2_b_t2_photo.jpg -> needs_review (5.84 s)
+2026-11-05 13:50:03,940 INFO eval.run_eval: [39/164] ledgers/ledger_us_quarterly.xlsx -> completed (4.13 s)
+2026-11-05 13:50:06,394 WARNING app.extraction.service: llm failed on pages 1-1 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:50:06,567 INFO eval.run_eval: [40/164] pdf/t1_digital_03.pdf -> completed (2.61 s)
+2026-11-05 13:50:10,814 WARNING app.extraction.service: llm failed on pages 1-1 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:50:10,946 INFO eval.run_eval: [41/164] pdf/t1_scan_heavy_01.pdf -> needs_review (4.37 s)
+2026-11-05 13:50:15,545 WARNING app.extraction.service: llm failed on pages 1-1 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:50:15,843 INFO eval.run_eval: [42/164] images/t1_lowres_01.png -> needs_review (4.88 s)
+2026-11-05 13:50:20,542 WARNING app.extraction.service: llm failed on pages 1-1 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:50:20,714 INFO eval.run_eval: [43/164] images/t1_scan_heavy_01.jpg -> needs_review (4.86 s)
+2026-11-05 13:50:36,142 WARNING app.extraction.service: llm failed on pages 1-3 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:50:36,142 WARNING app.extraction.service: llm failed on pages 4-4 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:50:37,240 INFO eval.run_eval: [44/164] images/t2_scan_01.tiff -> needs_review (16.51 s)
+2026-11-05 13:50:37,793 INFO eval.run_eval: [45/164] sheets/t1_invoice_text.xlsx -> needs_review (0.54 s)
+2026-11-05 13:50:38,607 INFO eval.run_eval: [46/164] sheets/t2_invoice.xls -> needs_review (0.80 s)
+2026-11-05 13:50:39,306 INFO eval.run_eval: [47/164] sheets/t3_invoice.csv -> completed (0.69 s)
+2026-11-05 13:50:42,348 WARNING app.extraction.service: llm failed on pages 4-5 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:50:42,348 WARNING app.extraction.service: llm failed on pages 1-3 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:50:44,378 WARNING app.extraction.service: llm failed on pages 9-9 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:50:44,378 WARNING app.extraction.service: llm failed on pages 6-8 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:50:46,399 WARNING app.extraction.service: llm failed on pages 10-11 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:50:46,399 WARNING app.extraction.service: llm failed on pages 12-14 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:50:48,417 WARNING app.extraction.service: llm failed on pages 16-16 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:50:48,417 WARNING app.extraction.service: llm failed on pages 15-15 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:50:50,430 WARNING app.extraction.service: llm failed on pages 17-17 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:50:50,447 WARNING app.extraction.service: llm failed on pages 18-18 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:50:52,450 WARNING app.extraction.service: llm failed on pages 19-20 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:50:52,473 WARNING app.extraction.service: llm failed on pages 21-23 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:50:54,478 WARNING app.extraction.service: llm failed on pages 24-24 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:50:54,493 WARNING app.extraction.service: llm failed on pages 25-27 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:50:56,512 WARNING app.extraction.service: llm failed on pages 28-28 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:50:56,526 WARNING app.extraction.service: llm failed on pages 29-29 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:50:58,535 WARNING app.extraction.service: llm failed on pages 30-30 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:50:58,548 WARNING app.extraction.service: llm failed on pages 31-32 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:51:07,834 INFO eval.run_eval: [48/164] multi/batch_02_t3.pdf -> needs_review (28.52 s)
+2026-11-05 13:51:10,220 WARNING app.extraction.service: llm failed on pages 1-1 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:51:10,346 INFO eval.run_eval: [49/164] groups/dup_3_a_digital.pdf -> completed (2.50 s)
+2026-11-05 13:51:14,747 WARNING app.extraction.service: llm failed on pages 1-1 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:51:14,871 INFO eval.run_eval: [50/164] groups/dup_3_b_t3_scan_heavy.pdf -> needs_review (4.52 s)
+2026-11-05 13:51:17,692 INFO eval.run_eval: [51/164] ledgers/ledger_uk_halves.xls -> completed (2.81 s)
+2026-11-05 13:51:20,067 WARNING app.extraction.service: llm failed on pages 1-1 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:51:20,231 INFO eval.run_eval: [52/164] pdf/t1_digital_04.pdf -> completed (2.53 s)
+2026-11-05 13:51:24,927 WARNING app.extraction.service: llm failed on pages 1-1 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:51:25,095 INFO eval.run_eval: [53/164] pdf/t1_lowres_01.pdf -> needs_review (4.85 s)
+2026-11-05 13:51:29,495 WARNING app.extraction.service: llm failed on pages 1-1 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:51:29,821 INFO eval.run_eval: [54/164] images/t2_lowres_01.png -> needs_review (4.72 s)
+2026-11-05 13:51:34,344 WARNING app.extraction.service: llm failed on pages 1-1 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:51:34,489 INFO eval.run_eval: [55/164] images/t1_photo_01.jpg -> completed (4.66 s)
+2026-11-05 13:51:39,337 WARNING app.extraction.service: llm failed on pages 1-1 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:51:39,608 INFO eval.run_eval: [56/164] images/t3_scan_01.tiff -> needs_review (5.11 s)
+2026-11-05 13:51:40,352 INFO eval.run_eval: [57/164] sheets/t2_invoice_typed.xlsx -> needs_review (0.74 s)
+2026-11-05 13:51:40,862 INFO eval.run_eval: [58/164] sheets/t3_invoice.xls -> needs_review (0.50 s)
+2026-11-05 13:51:41,392 INFO eval.run_eval: [59/164] sheets/t4_invoice.csv -> needs_review (0.52 s)
+2026-11-05 13:52:02,791 WARNING app.extraction.service: llm failed on pages 2-3 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:52:02,791 WARNING app.extraction.service: llm failed on pages 1-1 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:52:04,808 WARNING app.extraction.service: llm failed on pages 4-5 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:52:04,808 WARNING app.extraction.service: llm failed on pages 6-7 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:52:06,821 WARNING app.extraction.service: llm failed on pages 11-11 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:52:06,821 WARNING app.extraction.service: llm failed on pages 8-10 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:52:08,852 WARNING app.extraction.service: llm failed on pages 13-13 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:52:08,852 WARNING app.extraction.service: llm failed on pages 12-12 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:52:10,869 WARNING app.extraction.service: llm failed on pages 15-15 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:52:10,869 WARNING app.extraction.service: llm failed on pages 14-14 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:52:16,438 INFO eval.run_eval: [60/164] multi/batch_03_t4.pdf -> needs_review (35.03 s)
+2026-11-05 13:52:18,826 WARNING app.extraction.service: llm failed on pages 1-1 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:52:19,200 INFO eval.run_eval: [61/164] groups/dup_4_a_digital.pdf -> needs_review (2.75 s)
+2026-11-05 13:52:24,246 WARNING app.extraction.service: llm failed on pages 1-1 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:52:24,601 INFO eval.run_eval: [62/164] groups/dup_4_b_t4_scan_light.jpg -> needs_review (5.39 s)
+2026-11-05 13:52:27,029 INFO eval.run_eval: [63/164] ledgers/ledger_au_minimal.xls -> needs_review (2.42 s)
+2026-11-05 13:52:29,366 WARNING app.extraction.service: llm failed on pages 1-1 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:52:29,523 INFO eval.run_eval: [64/164] pdf/t1_digital_05.pdf -> needs_review (2.48 s)
+2026-11-05 13:52:34,072 WARNING app.extraction.service: llm failed on pages 1-1 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:52:34,221 INFO eval.run_eval: [65/164] pdf/t2_scan_light_01.pdf -> completed (4.69 s)
+2026-11-05 13:52:38,439 WARNING app.extraction.service: llm failed on pages 1-1 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:52:38,556 INFO eval.run_eval: [66/164] images/t3_clean_01.png -> completed (4.33 s)
+2026-11-05 13:52:43,166 WARNING app.extraction.service: llm failed on pages 1-1 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:52:43,314 INFO eval.run_eval: [67/164] images/t2_scan_light_01.jpg -> needs_review (4.75 s)
+2026-11-05 13:52:46,978 WARNING app.extraction.service: llm failed on pages 1-1 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:52:47,061 INFO eval.run_eval: [68/164] images/t5_scan_01.tiff -> needs_review (3.74 s)
+2026-11-05 13:52:47,590 INFO eval.run_eval: [69/164] sheets/t2_invoice_text.xlsx -> needs_review (0.52 s)
+2026-11-05 13:52:48,037 INFO eval.run_eval: [70/164] sheets/t4_invoice.xls -> needs_review (0.44 s)
+2026-11-05 13:52:48,406 INFO eval.run_eval: [71/164] sheets/t5_invoice.csv -> needs_review (0.36 s)
+2026-11-05 13:53:36,178 WARNING app.extraction.service: llm failed on pages 1-2 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:53:36,178 WARNING app.extraction.service: llm failed on pages 3-3 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:53:38,213 WARNING app.extraction.service: llm failed on pages 4-4 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:53:38,213 WARNING app.extraction.service: llm failed on pages 5-5 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:53:40,240 WARNING app.extraction.service: llm failed on pages 7-7 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:53:40,241 WARNING app.extraction.service: llm failed on pages 6-6 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:53:42,250 WARNING app.extraction.service: llm failed on pages 8-8 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:53:42,251 WARNING app.extraction.service: llm failed on pages 9-9 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:53:44,273 WARNING app.extraction.service: llm failed on pages 10-10 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:53:44,273 WARNING app.extraction.service: llm failed on pages 11-11 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:53:46,296 WARNING app.extraction.service: llm failed on pages 14-16 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:53:46,309 WARNING app.extraction.service: llm failed on pages 12-13 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:53:48,315 WARNING app.extraction.service: llm failed on pages 17-18 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:53:48,336 WARNING app.extraction.service: llm failed on pages 19-19 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:53:52,983 INFO eval.run_eval: [72/164] multi/batch_04_t6.pdf -> needs_review (64.56 s)
+2026-11-05 13:53:55,386 WARNING app.extraction.service: llm failed on pages 1-1 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:53:55,541 INFO eval.run_eval: [73/164] groups/dup_5_a_digital.pdf -> needs_review (2.55 s)
+2026-11-05 13:54:00,100 WARNING app.extraction.service: llm failed on pages 1-1 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:54:00,245 INFO eval.run_eval: [74/164] groups/dup_5_b_t6_photo.jpg -> needs_review (4.69 s)
+2026-11-05 13:54:02,697 INFO eval.run_eval: [75/164] ledgers/ledger_us_comma_utf8.csv -> completed (2.44 s)
+2026-11-05 13:54:05,126 WARNING app.extraction.service: llm failed on pages 1-1 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:54:05,300 INFO eval.run_eval: [76/164] pdf/t1_digital_06.pdf -> needs_review (2.59 s)
+2026-11-05 13:54:10,730 WARNING app.extraction.service: llm failed on pages 1-1 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:54:11,115 INFO eval.run_eval: [77/164] pdf/t2_scan_light_02.pdf -> needs_review (5.81 s)
+2026-11-05 13:54:15,591 WARNING app.extraction.service: llm failed on pages 1-1 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:54:15,857 INFO eval.run_eval: [78/164] images/t3_lowres_01.png -> completed (4.74 s)
+2026-11-05 13:54:20,506 WARNING app.extraction.service: llm failed on pages 1-1 (local LLM request failed: ConnectError, transient=True); using the rules result
+2026-11-05 13:54:20,652 INFO eval.run_eval: [79/164] images/t2_scan_heavy_01.jpg -> needs_review (4.79 s)

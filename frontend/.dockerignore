@@ -1,0 +1,18 @@
+# Dependencies and build output are produced inside the image.
+node_modules
+.next
+out
+build
+*.tsbuildinfo
+next-env.d.ts
+
+# Test output
+coverage
+test-results
+playwright-report
+blob-report
+
+# Local configuration and logs (secrets are passed at runtime)
+.env*
+npm-debug.log*
+.DS_Store
